@@ -198,7 +198,7 @@ app.layout =  html.Div([
                     figure = plot2_bar
                 )
             ],
-                width = 6,
+                width = 7,
                 style = {
                     'backgroundColor':'white',
                 },            
@@ -210,7 +210,7 @@ app.layout =  html.Div([
                     figure = plot3_box
                 )
             ],
-                width = 6,
+                width = 5,
                 style = {
                     'backgroundColor':'white',
                 },            
@@ -224,7 +224,7 @@ app.layout =  html.Div([
                     figure = plot1_scatter
                 )
             ],
-                width = 6,
+                width = 8,
                 style = {
                     'backgroundColor':'white',
                 },            
@@ -236,7 +236,7 @@ app.layout =  html.Div([
                     figure = plot4_corr
                 )
             ],
-                width = 6,
+                width = 4,
                 style = {
                     'backgroundColor':'white',
                 },            
