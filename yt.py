@@ -224,7 +224,7 @@ app.layout =  html.Div([
                     figure = plot1_scatter
                 )
             ],
-                width = 8,
+                width = 7,
                 style = {
                     'backgroundColor':'white',
                 },            
