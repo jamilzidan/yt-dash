@@ -99,7 +99,7 @@ plot3_box = px.box(
     x='trending_day_name',
     y='view',
     title='Distribution of Views in each Youtube Channel Trending',
-    color_discrete_sequence = px.colors.qualitative.Set2,
+    color_discrete_sequence = px.colors.qualitative.Pastel,
     labels={
         'trending_day_name': 'Day of Trending :',
         'view': 'Sum of Views' 
@@ -145,17 +145,10 @@ app.layout =  html.Div([
     html.Div([
         dbc.Row([
             dbc.Col([
+                html.Br(),
                 dcc.Graph(
-                    id = 'scatterplot',
-                    figure = plot1_scatter
-                ),
-                dcc.Graph(
-                    id = 'barplot',
-                    figure = plot2_bar
-                ),
-                dcc.Graph(
-                    id = 'boxplot',
-                    figure = plot3_box
+                    id = 'lineplot',
+                    figure = plot5_line
                 )
             ],
                 width = 8,
@@ -190,22 +183,63 @@ app.layout =  html.Div([
                         ),
                     ]),
                 ]),
+            ],
+                width = 4,
+                style = {
+                    'backgroundColor':'white',
+                },      
+            ),
+        ]),
+        dbc.Row([
+            dbc.Col([
                 html.Br(),
                 dcc.Graph(
-                    id = 'lineplot',
-                    figure = plot5_line
-                ),
-
+                    id = 'barplot',
+                    figure = plot2_bar
+                )
+            ],
+                width = 6,
+                style = {
+                    'backgroundColor':'white',
+                },            
+            ),
+            dbc.Col([
+                html.Br(),
+                dcc.Graph(
+                    id = 'boxplot',
+                    figure = plot3_box
+                )
+            ],
+                width = 6,
+                style = {
+                    'backgroundColor':'white',
+                },            
+            ),
+        ]),
+        dbc.Row([
+            dbc.Col([
+                html.Br(),
+                dcc.Graph(
+                    id = 'scatterplot',
+                    figure = plot1_scatter
+                )
+            ],
+                width = 6,
+                style = {
+                    'backgroundColor':'white',
+                },            
+            ),
+            dbc.Col([
                 html.Br(),
                 dcc.Graph(
                     id = 'corrplot',
                     figure = plot4_corr
                 )
             ],
-                width = 4,
+                width = 6,
                 style = {
                     'backgroundColor':'white',
-                },      
+                },            
             ),
         ]),
         html.Br(),html.Br(),
@@ -308,7 +342,7 @@ def update_plot3(channelname, start_date, end_date):
         x='trending_day_name',
         y='view',
         title=f'Distribution of Views in {str(channelname)} Youtube Channel',
-        color_discrete_sequence = px.colors.qualitative.Set2,
+        color_discrete_sequence = px.colors.qualitative.Pastel,
         labels={
             'trending_day_name': 'Day of Trending :',
             'view': 'Sum of Views' 
