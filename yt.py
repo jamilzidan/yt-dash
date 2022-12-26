@@ -236,7 +236,7 @@ app.layout =  html.Div([
                     figure = plot4_corr
                 )
             ],
-                width = 4,
+                width = 5,
                 style = {
                     'backgroundColor':'white',
                 },            
