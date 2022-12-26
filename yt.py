@@ -167,13 +167,9 @@ app.layout =  html.Div([
             ),
             dbc.Col([
                 html.Br(),
-                dbc.Card([
-
-                ]),
                 html.Br(),
-                dbc.Card([
-
-                ]),
+                html.Br(),
+                html.Br(),
                 html.Br(),
                 dbc.Card([
                     dbc.CardHeader('Select Channel Name'),
@@ -186,6 +182,7 @@ app.layout =  html.Div([
                         ),
                     ]),
                 ]),
+                html.Br(),
                 html.Br(),
                 dbc.Card([
                     dbc.CardHeader('Select Date Range'),
@@ -201,14 +198,7 @@ app.layout =  html.Div([
                         ),
                     ]),
                 ]),
-                html.Br(),
-                dbc.Card([
-
-                ]),
-                html.Br(),
-                dbc.Card([
-
-                ]),
+                html.Br()
             ],
                 width = 4,
                 style = {
