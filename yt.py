@@ -137,6 +137,8 @@ plot5_line = px.line(
     }
 )
 
+plot5_line.update_traces(line_color='#456987')
+
 # default date
 default_min_date = date(yt['publish_daterange'].min().year,
                         yt['publish_daterange'].min().month,
@@ -166,6 +168,14 @@ app.layout =  html.Div([
             dbc.Col([
                 html.Br(),
                 dbc.Card([
+
+                ]),
+                html.Br(),
+                dbc.Card([
+
+                ]),
+                html.Br(),
+                dbc.Card([
                     dbc.CardHeader('Select Channel Name'),
                     dbc.CardBody([
                         dcc.Dropdown(
@@ -190,6 +200,14 @@ app.layout =  html.Div([
                             end_date_placeholder_text='End Date',
                         ),
                     ]),
+                ]),
+                html.Br(),
+                dbc.Card([
+
+                ]),
+                html.Br(),
+                dbc.Card([
+
                 ]),
             ],
                 width = 4,
@@ -412,6 +430,9 @@ def update_plot5(channelname,start_date,end_date):
         'trending_time': 'Date of Trending'
         }
     )
+
+    plot5_line.update_traces(line_color='#456987')
+
     return plot5_line
 
 
