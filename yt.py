@@ -114,8 +114,15 @@ plot4_corr = go.Figure().add_trace(
                 y = yt_corr.index,
                 z = np.array(yt_corr),
                 text=yt_corr.values,
-                texttemplate='%{text:.2f}'
+                texttemplate='%{text:.2f}',
+                colorscale='Blues'
     )
+)
+
+plot4_corr.update_layout(
+    title={
+        'text' : f'Correlation of Numeric Value in each Youtube Channel'
+    }
 )
 
 # visualization plot5
@@ -164,7 +171,8 @@ app.layout =  html.Div([
                         dcc.Dropdown(
                             id = 'select_channel_name',
                             options = yt['channel_name'].unique(),
-                            value='Nihongo Mantappu'
+                            value='Nihongo Mantappu',
+                            style = {"color":"black"}
                         ),
                     ]),
                 ]),
@@ -257,8 +265,8 @@ app.layout =  html.Div([
     }),
 ])
 
-# callback all plot
 
+# callback all plot
 @app.callback(
     Output(component_id='scatterplot', component_property='figure'),
     Input(component_id='select_channel_name',component_property='value'),
@@ -370,8 +378,14 @@ def update_plot4(channelname, start_date, end_date):
                 y = yt_corr.index,
                 z = np.array(yt_corr),
                 text=yt_corr.values,
-                texttemplate='%{text:.2f}'
+                texttemplate='%{text:.2f}',
+                colorscale='Blues'
                 )
+    )
+    plot4_corr.update_layout(
+        title={
+            'text' : f'Correlation of Numeric Value {str(channelname)} Youtube Channel'
+        }
     )
     return plot4_corr
 
